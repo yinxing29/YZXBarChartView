@@ -28,7 +28,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.coordinateColor = [UIColor blackColor];
-        
+
         self.maxScaleValue = 100.0;
         self.calibrationIntervalValue = 10.0;
     }
@@ -235,6 +235,27 @@ static CGFloat Y_Y = 30.0;
 {
     if (_colorArr != colorArr) {
         _colorArr = colorArr;
+    }
+}
+
+- (void)setMaxScaleValue:(CGFloat)maxScaleValue
+{
+    if (_maxScaleValue != maxScaleValue) {
+        _maxScaleValue = maxScaleValue;
+    }
+}
+
+- (void)setCalibrationIntervalValue:(CGFloat)calibrationIntervalValue
+{
+    if (_calibrationIntervalValue != calibrationIntervalValue) {
+        _calibrationIntervalValue = calibrationIntervalValue;
+    }
+}
+
+- (void)setHideAnnotation:(BOOL)hideAnnotation
+{
+    if (_hideAnnotation != hideAnnotation) {
+        _hideAnnotation = hideAnnotation;
     }
 }
 
