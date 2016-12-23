@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD0B7A181E0A0DDC0096A919 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B7A171E0A0DDC0096A919 /* main.m */; };
+		BD0B7A1B1E0A0DDC0096A919 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B7A1A1E0A0DDC0096A919 /* AppDelegate.m */; };
+		BD0B7A1E1E0A0DDC0096A919 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B7A1D1E0A0DDC0096A919 /* ViewController.m */; };
+		BD0B7A211E0A0DDC0096A919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD0B7A1F1E0A0DDC0096A919 /* Main.storyboard */; };
+		BD0B7A231E0A0DDC0096A919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0B7A221E0A0DDC0096A919 /* Assets.xcassets */; };
+		BD0B7A261E0A0DDC0096A919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD0B7A241E0A0DDC0096A919 /* LaunchScreen.storyboard */; };
+		BD0B7A311E0A0DDC0096A919 /* YZXBarChartViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B7A301E0A0DDC0096A919 /* YZXBarChartViewTests.m */; };
+		BD0B7A3C1E0A0DDC0096A919 /* YZXBarChartViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B7A3B1E0A0DDC0096A919 /* YZXBarChartViewUITests.m */; };
+		BD2859BD1E0CB21E002169E0 /* YZXBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2859BC1E0CB21E002169E0 /* YZXBarChartView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD0B7A2D1E0A0DDC0096A919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD0B7A0B1E0A0DDC0096A919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD0B7A121E0A0DDC0096A919;
+			remoteInfo = YZXBarChartView;
+		};
+		BD0B7A381E0A0DDC0096A919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD0B7A0B1E0A0DDC0096A919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD0B7A121E0A0DDC0096A919;
+			remoteInfo = YZXBarChartView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BD0B7A131E0A0DDC0096A919 /* YZXBarChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZXBarChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD0B7A171E0A0DDC0096A919 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD0B7A191E0A0DDC0096A919 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD0B7A1A1E0A0DDC0096A919 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BD0B7A1C1E0A0DDC0096A919 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BD0B7A1D1E0A0DDC0096A919 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BD0B7A201E0A0DDC0096A919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD0B7A221E0A0DDC0096A919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD0B7A251E0A0DDC0096A919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD0B7A271E0A0DDC0096A919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD0B7A2C1E0A0DDC0096A919 /* YZXBarChartViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXBarChartViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD0B7A301E0A0DDC0096A919 /* YZXBarChartViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZXBarChartViewTests.m; sourceTree = "<group>"; };
+		BD0B7A321E0A0DDC0096A919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD0B7A371E0A0DDC0096A919 /* YZXBarChartViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXBarChartViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD0B7A3B1E0A0DDC0096A919 /* YZXBarChartViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZXBarChartViewUITests.m; sourceTree = "<group>"; };
+		BD0B7A3D1E0A0DDC0096A919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD2859BB1E0CB21E002169E0 /* YZXBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXBarChartView.h; sourceTree = "<group>"; };
+		BD2859BC1E0CB21E002169E0 /* YZXBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXBarChartView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD0B7A101E0A0DDC0096A919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A291E0A0DDC0096A919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A341E0A0DDC0096A919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD0B7A0A1E0A0DDC0096A919 = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A151E0A0DDC0096A919 /* YZXBarChartView */,
+				BD0B7A2F1E0A0DDC0096A919 /* YZXBarChartViewTests */,
+				BD0B7A3A1E0A0DDC0096A919 /* YZXBarChartViewUITests */,
+				BD0B7A141E0A0DDC0096A919 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD0B7A141E0A0DDC0096A919 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A131E0A0DDC0096A919 /* YZXBarChartView.app */,
+				BD0B7A2C1E0A0DDC0096A919 /* YZXBarChartViewTests.xctest */,
+				BD0B7A371E0A0DDC0096A919 /* YZXBarChartViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD0B7A151E0A0DDC0096A919 /* YZXBarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A191E0A0DDC0096A919 /* AppDelegate.h */,
+				BD0B7A1A1E0A0DDC0096A919 /* AppDelegate.m */,
+				BD0B7A1C1E0A0DDC0096A919 /* ViewController.h */,
+				BD0B7A1D1E0A0DDC0096A919 /* ViewController.m */,
+				BD2859BA1E0CB20A002169E0 /* YZXBarChartView */,
+				BD0B7A1F1E0A0DDC0096A919 /* Main.storyboard */,
+				BD0B7A221E0A0DDC0096A919 /* Assets.xcassets */,
+				BD0B7A241E0A0DDC0096A919 /* LaunchScreen.storyboard */,
+				BD0B7A271E0A0DDC0096A919 /* Info.plist */,
+				BD0B7A161E0A0DDC0096A919 /* Supporting Files */,
+			);
+			path = YZXBarChartView;
+			sourceTree = "<group>";
+		};
+		BD0B7A161E0A0DDC0096A919 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A171E0A0DDC0096A919 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD0B7A2F1E0A0DDC0096A919 /* YZXBarChartViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A301E0A0DDC0096A919 /* YZXBarChartViewTests.m */,
+				BD0B7A321E0A0DDC0096A919 /* Info.plist */,
+			);
+			path = YZXBarChartViewTests;
+			sourceTree = "<group>";
+		};
+		BD0B7A3A1E0A0DDC0096A919 /* YZXBarChartViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B7A3B1E0A0DDC0096A919 /* YZXBarChartViewUITests.m */,
+				BD0B7A3D1E0A0DDC0096A919 /* Info.plist */,
+			);
+			path = YZXBarChartViewUITests;
+			sourceTree = "<group>";
+		};
+		BD2859BA1E0CB20A002169E0 /* YZXBarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				BD2859BB1E0CB21E002169E0 /* YZXBarChartView.h */,
+				BD2859BC1E0CB21E002169E0 /* YZXBarChartView.m */,
+			);
+			path = YZXBarChartView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD0B7A121E0A0DDC0096A919 /* YZXBarChartView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD0B7A401E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartView" */;
+			buildPhases = (
+				BD0B7A0F1E0A0DDC0096A919 /* Sources */,
+				BD0B7A101E0A0DDC0096A919 /* Frameworks */,
+				BD0B7A111E0A0DDC0096A919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YZXBarChartView;
+			productName = YZXBarChartView;
+			productReference = BD0B7A131E0A0DDC0096A919 /* YZXBarChartView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BD0B7A2B1E0A0DDC0096A919 /* YZXBarChartViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD0B7A431E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartViewTests" */;
+			buildPhases = (
+				BD0B7A281E0A0DDC0096A919 /* Sources */,
+				BD0B7A291E0A0DDC0096A919 /* Frameworks */,
+				BD0B7A2A1E0A0DDC0096A919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD0B7A2E1E0A0DDC0096A919 /* PBXTargetDependency */,
+			);
+			name = YZXBarChartViewTests;
+			productName = YZXBarChartViewTests;
+			productReference = BD0B7A2C1E0A0DDC0096A919 /* YZXBarChartViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BD0B7A361E0A0DDC0096A919 /* YZXBarChartViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD0B7A461E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartViewUITests" */;
+			buildPhases = (
+				BD0B7A331E0A0DDC0096A919 /* Sources */,
+				BD0B7A341E0A0DDC0096A919 /* Frameworks */,
+				BD0B7A351E0A0DDC0096A919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD0B7A391E0A0DDC0096A919 /* PBXTargetDependency */,
+			);
+			name = YZXBarChartViewUITests;
+			productName = YZXBarChartViewUITests;
+			productReference = BD0B7A371E0A0DDC0096A919 /* YZXBarChartViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD0B7A0B1E0A0DDC0096A919 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = yinixng;
+				TargetAttributes = {
+					BD0B7A121E0A0DDC0096A919 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 67FSYNPTAV;
+						ProvisioningStyle = Automatic;
+					};
+					BD0B7A2B1E0A0DDC0096A919 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD0B7A121E0A0DDC0096A919;
+					};
+					BD0B7A361E0A0DDC0096A919 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD0B7A121E0A0DDC0096A919;
+					};
+				};
+			};
+			buildConfigurationList = BD0B7A0E1E0A0DDC0096A919 /* Build configuration list for PBXProject "YZXBarChartView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD0B7A0A1E0A0DDC0096A919;
+			productRefGroup = BD0B7A141E0A0DDC0096A919 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD0B7A121E0A0DDC0096A919 /* YZXBarChartView */,
+				BD0B7A2B1E0A0DDC0096A919 /* YZXBarChartViewTests */,
+				BD0B7A361E0A0DDC0096A919 /* YZXBarChartViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD0B7A111E0A0DDC0096A919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD0B7A261E0A0DDC0096A919 /* LaunchScreen.storyboard in Resources */,
+				BD0B7A231E0A0DDC0096A919 /* Assets.xcassets in Resources */,
+				BD0B7A211E0A0DDC0096A919 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A2A1E0A0DDC0096A919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A351E0A0DDC0096A919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD0B7A0F1E0A0DDC0096A919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2859BD1E0CB21E002169E0 /* YZXBarChartView.m in Sources */,
+				BD0B7A1E1E0A0DDC0096A919 /* ViewController.m in Sources */,
+				BD0B7A1B1E0A0DDC0096A919 /* AppDelegate.m in Sources */,
+				BD0B7A181E0A0DDC0096A919 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A281E0A0DDC0096A919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD0B7A311E0A0DDC0096A919 /* YZXBarChartViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD0B7A331E0A0DDC0096A919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD0B7A3C1E0A0DDC0096A919 /* YZXBarChartViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD0B7A2E1E0A0DDC0096A919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD0B7A121E0A0DDC0096A919 /* YZXBarChartView */;
+			targetProxy = BD0B7A2D1E0A0DDC0096A919 /* PBXContainerItemProxy */;
+		};
+		BD0B7A391E0A0DDC0096A919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD0B7A121E0A0DDC0096A919 /* YZXBarChartView */;
+			targetProxy = BD0B7A381E0A0DDC0096A919 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BD0B7A1F1E0A0DDC0096A919 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD0B7A201E0A0DDC0096A919 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD0B7A241E0A0DDC0096A919 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD0B7A251E0A0DDC0096A919 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD0B7A3E1E0A0DDC0096A919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BD0B7A3F1E0A0DDC0096A919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD0B7A411E0A0DDC0096A919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67FSYNPTAV;
+				INFOPLIST_FILE = YZXBarChartView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BD0B7A421E0A0DDC0096A919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67FSYNPTAV;
+				INFOPLIST_FILE = YZXBarChartView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BD0B7A441E0A0DDC0096A919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YZXBarChartViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXBarChartView.app/YZXBarChartView";
+			};
+			name = Debug;
+		};
+		BD0B7A451E0A0DDC0096A919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YZXBarChartViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXBarChartView.app/YZXBarChartView";
+			};
+			name = Release;
+		};
+		BD0B7A471E0A0DDC0096A919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YZXBarChartViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YZXBarChartView;
+			};
+			name = Debug;
+		};
+		BD0B7A481E0A0DDC0096A919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YZXBarChartViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXBarChartViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YZXBarChartView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD0B7A0E1E0A0DDC0096A919 /* Build configuration list for PBXProject "YZXBarChartView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD0B7A3E1E0A0DDC0096A919 /* Debug */,
+				BD0B7A3F1E0A0DDC0096A919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD0B7A401E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD0B7A411E0A0DDC0096A919 /* Debug */,
+				BD0B7A421E0A0DDC0096A919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD0B7A431E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD0B7A441E0A0DDC0096A919 /* Debug */,
+				BD0B7A451E0A0DDC0096A919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD0B7A461E0A0DDC0096A919 /* Build configuration list for PBXNativeTarget "YZXBarChartViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD0B7A471E0A0DDC0096A919 /* Debug */,
+				BD0B7A481E0A0DDC0096A919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD0B7A0B1E0A0DDC0096A919 /* Project object */;
+}
