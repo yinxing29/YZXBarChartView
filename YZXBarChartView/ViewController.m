@@ -238,6 +238,7 @@
         [self.modelArr removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source.
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
     }
 }
 
