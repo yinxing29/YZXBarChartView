@@ -15,6 +15,8 @@
 //X轴终点坐标x,y
 #define X_X self.bounds.size.width - 20.0
 #define X_Y origin_y
+//X轴最后一个刻度距X轴箭头距离
+#define X_MAX 30.0
 
 //Y轴终点坐标x
 #define Y_X origin_x
@@ -131,7 +133,10 @@ static CGFloat Y_Y = 30.0;
      添加X轴刻度
      */
     //计算X轴相邻两刻度之间的距离
-    CGFloat scale_x = (X_X - 30.0 - origin_x) / (float)self.titleArr.count;
+    CGFloat scale_x = (X_X - X_MAX - origin_x) / (float)self.titleArr.count;
+    if (self.titleArr.count <= 3) {
+        scale_x = (X_X - X_MAX - origin_x) / (float)(self.titleArr.count + 1);
+    }
     CGContextSetStrokeColorWithColor(context, self.coordinateColor.CGColor);
     for (int i = 1; i<=self.titleArr.count; i++) {
         CGContextMoveToPoint(context, scale_x * i + origin_x, origin_y);
@@ -177,8 +182,8 @@ static CGFloat Y_Y = 30.0;
     //画柱状图(scale_x:X轴相邻两刻度之间的距离)
     //计算柱状图的宽度
     __block CGFloat barWidth = scale_x - scale_x / 3.0;
-    if (barWidth <= 0) {
-        barWidth = scale_x - 1;
+    if (barWidth >= X_MAX / 2.0) {
+        barWidth = X_MAX - 10.0;
     }
 
     [self.contentArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
