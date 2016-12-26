@@ -203,6 +203,9 @@ static CGFloat Y_Y = 30.0;
         //画内容
         [scaleValue drawInRect:CGRectMake(content_x - scaleValueSize.width / 2.0, content_y - 0.5 - scaleValueSize.height - 2.0, scaleValueSize.width, scaleValueSize.height) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10.0],NSForegroundColorAttributeName:self.coordinateColor}];
     }];
+    
+    //裁剪超出视图部分
+    self.layer.masksToBounds = YES;
 }
 
 #pragma mark - setter
