@@ -103,12 +103,6 @@ static CGFloat Y_Y = 30.0;
             label.textColor = weak_self.coordinateColor;
             label.text = obj;
             [scrollView addSubview:label];
-            
-//            CGContextSetFillColorWithColor(context, weak_self.colorArr[idx].CGColor);
-//            CGContextAddRect(context, annotationRect);
-//            CGContextDrawPath(context, kCGPathFill);
-//            
-//            [obj drawInRect:annotationTitleRect withAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:weak_self.coordinateColor}];
         }else {
             Y_Y = 20.0;
         }
