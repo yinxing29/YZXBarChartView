@@ -250,6 +250,7 @@
 #pragma mark - 初始化
 - (NSMutableDictionary *)colorsArr
 {
+//    @"红色",@0,@"橙色",@1,@"蓝色",@2,@"灰色",@3,@"黄色",@4,@"红色",@5,@"橙色",@6,@"蓝色",@7,@"灰色",@8,@"黄色",@9,@"红色",@10,@"橙色",@11,@"蓝色",@12,@"灰色",@13,@"黄色",@14,@"红色",@15,@"橙色",@16,@"蓝色",@17,@"灰色",@18,@"黄色",@19,@"红色",@20,@"橙色",@21,@"蓝色",@22,@"灰色",@23,@"黄色",@24,@"红色",@25,@"橙色",@26,@"蓝色",@27,@"灰色",@28,@"黄色",@29
     if (!_colorsArr) {
         _colorsArr = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"红色",@0,@"橙色",@1,@"蓝色",@2,@"灰色",@3,@"黄色",@4, nil];
     }
@@ -258,6 +259,7 @@
 
 - (NSMutableDictionary *)precentageArr
 {
+//    @"30",@0,@"3",@1,@"27",@2,@"25",@3,@"15",@4,@"30",@5,@"3",@6,@"27",@7,@"25",@8,@"15",@9,@"30",@10,@"3",@11,@"27",@12,@"25",@13,@"15",@14,@"30",@15,@"3",@16,@"27",@17,@"25",@18,@"15",@19,@"30",@20,@"3",@21,@"27",@22,@"25",@23,@"15",@24,@"30",@25,@"3",@26,@"27",@27,@"25",@28,@"15",@29
     if (!_precentageArr) {
         _precentageArr = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"30",@0,@"3",@1,@"27",@2,@"25",@3,@"15",@4, nil];
     }
@@ -266,6 +268,7 @@
 
 - (NSMutableDictionary *)titleArr
 {
+//    @"title1",@0,@"title2",@1,@"title3",@2,@"title4",@3,@"title5",@4,@"title1",@5,@"title2",@6,@"title3",@7,@"title4",@8,@"title5",@9,@"title1",@10,@"title2",@11,@"title3",@12,@"title4",@13,@"title5",@14,@"title1",@15,@"title2",@16,@"title3",@17,@"title4",@18,@"title5",@19,@"title1",@20,@"title2",@21,@"title3",@22,@"title4",@23,@"title5",@24,@"title1",@25,@"title2",@26,@"title3",@27,@"title4",@28,@"title5",@29
     if (!_titleArr) {
         _titleArr = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"title1",@0,@"title2",@1,@"title3",@2,@"title4",@3,@"title5",@4, nil];
     }

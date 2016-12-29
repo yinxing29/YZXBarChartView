@@ -49,6 +49,7 @@ static CGFloat Y_Y = 30.0;
         return;
     }
     
+    //传入颜色数量小于内容数量时添加随机颜色
     if (self.colorArr.count < self.titleArr.count) {
         NSMutableArray *colors = [NSMutableArray array];
         [colors addObjectsFromArray:self.colorArr];
@@ -68,31 +69,48 @@ static CGFloat Y_Y = 30.0;
     __block NSDictionary *arrts = @{NSFontAttributeName:font};
     __block CGRect annotationRect = CGRectZero;
     __block CGRect annotationTitleRect = CGRectZero;
+    //计算一列放多少个annotation
+    __block NSInteger number = self.titleArr.count % 2 == 0?self.titleArr.count / 2:self.titleArr.count / 2 + 1;
+    if (self.titleArr.count >= 5) {
+        number = 3;
+    }
+    //计算annotation高度(及title文本的高度)
+    __block CGFloat annotationHeight = [self.titleArr[0] boundingRectWithSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size.height;
     __weak typeof(self) weak_self = self;
+    
+    __block UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, number * (annotationHeight + 5) + 5)];
+    if (!weak_self.hideAnnotation) {
+        [self addSubview:scrollView];
+    }
+    //添加注释
     [self.titleArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (!weak_self.hideAnnotation) {
-            //计算文本size
-            CGSize titleSize = [obj boundingRectWithSize:CGSizeMake(weak_self.bounds.size.width, weak_self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
-            //计算一列放多少个annotation
-            NSInteger number = weak_self.titleArr.count % 2 == 0?weak_self.titleArr.count / 2:weak_self.titleArr.count / 2 + 1;
+            //设置scrollview的contextSize
+            CGFloat contentSizeWidth = weak_self.titleArr.count % number == 0?weak_self.titleArr.count / number:weak_self.titleArr.count / number + 1;
+            scrollView.contentSize = CGSizeMake((weak_self.bounds.size.width / 2.0) * contentSizeWidth, 0);
             //计算坐标Y轴终点的y
-            Y_Y = number * (5 + titleSize.height) + 20.0;
-            if (idx < number) {
-                annotationRect = CGRectMake(5, 5 + (idx * (5 + titleSize.height)), titleSize.height, titleSize.height);
-                annotationTitleRect = CGRectMake(10 + titleSize.height, 5 + (idx * (5 + titleSize.height)), weak_self.bounds.size.width / 2.0 - titleSize.height -  10.0, titleSize.height);
-            }else {
-                annotationRect = CGRectMake(5 + weak_self.bounds.size.width / 2.0, 5 + ((idx - number) * (5 + titleSize.height)), titleSize.height, titleSize.height);
-                annotationTitleRect = CGRectMake(10 + titleSize.height + weak_self.bounds.size.width / 2.0, 5 + ((idx - number) * (5 + titleSize.height)), weak_self.bounds.size.width / 2.0 - titleSize.height -  10.0, titleSize.height);
-            }
-            
+            Y_Y = scrollView.bounds.size.height + 15.0;
+            annotationRect = CGRectMake(5 + (weak_self.bounds.size.width / 2.0) * (idx / number), 5 + ((idx % number) * (5 + annotationHeight)), annotationHeight, annotationHeight);
+            annotationTitleRect = CGRectMake(5 + CGRectGetMaxX(annotationRect), 5 + ((idx % number) * (5 + annotationHeight)), weak_self.bounds.size.width / 2.0 - annotationHeight -  10.0, annotationHeight);
+            NSLog(@"%@",NSStringFromCGRect(annotationRect));
             //添加注释
-            CGContextSetFillColorWithColor(context, weak_self.colorArr[idx].CGColor);
-            CGContextAddRect(context, annotationRect);
-            CGContextDrawPath(context, kCGPathFill);
+            UIView *view = [[UIView alloc] initWithFrame:annotationRect];
+            view.backgroundColor = weak_self.colorArr[idx];
+            [scrollView addSubview:view];
             
-            [obj drawInRect:annotationTitleRect withAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:weak_self.coordinateColor}];
+            UILabel *label = [[UILabel alloc] initWithFrame:annotationTitleRect];
+            label.font = font;
+            label.textColor = weak_self.coordinateColor;
+            label.text = obj;
+            [scrollView addSubview:label];
+            
+//            CGContextSetFillColorWithColor(context, weak_self.colorArr[idx].CGColor);
+//            CGContextAddRect(context, annotationRect);
+//            CGContextDrawPath(context, kCGPathFill);
+//            
+//            [obj drawInRect:annotationTitleRect withAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:weak_self.coordinateColor}];
         }else {
-            Y_Y = 30.0;
+            Y_Y = 20.0;
         }
     }];
 
@@ -142,19 +160,6 @@ static CGFloat Y_Y = 30.0;
         CGContextMoveToPoint(context, scale_x * i + origin_x, origin_y);
         CGContextAddLineToPoint(context, scale_x * i + origin_x, origin_y - 3.0);
         CGContextDrawPath(context, kCGPathStroke);
-        
-        //根据font计算一行文本的高度
-        CGFloat onelineHeight = [self.titleArr[i - 1] boundingRectWithSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size.height;
-        
-        CGSize titleSize = [self.titleArr[i - 1] boundingRectWithSize:CGSizeMake(self.bounds.size.height - (origin_y), onelineHeight * 2) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
-        //添加X轴刻度说明
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(scale_x * i + origin_x - titleSize.width / 2.0, origin_y + 10.0, self.bounds.size.height - (origin_y), titleSize.height)];
-        label.text = self.titleArr[i - 1];
-        label.textColor = self.coordinateColor;
-        label.font = font;
-        label.numberOfLines = 2;
-        label.transform = CGAffineTransformMakeRotation(M_PI_4);
-        [self addSubview:label];
     }
     
     //添加Y轴大刻度
@@ -185,7 +190,14 @@ static CGFloat Y_Y = 30.0;
     if (barWidth >= X_MAX / 2.0) {
         barWidth = X_MAX - 10.0;
     }
-
+    
+    //当柱形图宽度很小时，调整文本大小
+    if (barWidth < annotationHeight) {
+        //文本的font之间相差2.0时，text的高度相差2.4
+        font = [UIFont systemFontOfSize:(10.0 - (int)(barWidth / 2.0))];
+        arrts = @{NSFontAttributeName:font};
+    }
+    
     [self.contentArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat content_x = scale_x * (idx + 1) + origin_x;
         CGFloat content_scale = [obj floatValue] / (float)weak_self.maxScaleValue;
@@ -194,6 +206,19 @@ static CGFloat Y_Y = 30.0;
         CGContextAddRect(context, CGRectMake(content_x - barWidth / 2.0, content_y - 0.5, barWidth, scale_y * scaleNumber * content_scale));
         CGContextDrawPath(context, kCGPathFill);
         
+        //根据font计算一行文本的高度
+        CGFloat onelineHeight = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size.height;
+        
+        CGSize titleSize = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.height - (origin_y), onelineHeight * 2) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
+        
+        //添加X轴刻度说明                                                                              (scale_x / 3.0 * 2.0) / 2.0
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(scale_x * (idx + 1) + origin_x - barWidth / 2.0, origin_y + 10.0, self.bounds.size.height - (origin_y), titleSize.height)];
+        label.text = self.titleArr[idx];
+        label.textColor = self.coordinateColor;
+        label.font = font;
+        label.transform = CGAffineTransformMakeRotation(M_PI_4);
+        [self addSubview:label];
+        
         //添加标注
         NSString *scaleValue = obj;
         if ([obj floatValue] >= 10000.0) {
@@ -201,7 +226,7 @@ static CGFloat Y_Y = 30.0;
         }
         CGSize scaleValueSize = [scaleValue boundingRectWithSize:CGSizeMake(weak_self.bounds.size.width, weak_self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
         //画内容
-        [scaleValue drawInRect:CGRectMake(content_x - scaleValueSize.width / 2.0, content_y - 0.5 - scaleValueSize.height - 2.0, scaleValueSize.width, scaleValueSize.height) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10.0],NSForegroundColorAttributeName:self.coordinateColor}];
+        [scaleValue drawInRect:CGRectMake(content_x - scaleValueSize.width / 2.0, content_y - 0.5 - scaleValueSize.height - 2.0, scaleValueSize.width, scaleValueSize.height) withAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:self.coordinateColor}];
     }];
     
     //裁剪超出视图部分

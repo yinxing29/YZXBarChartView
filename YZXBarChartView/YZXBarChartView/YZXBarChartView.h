@@ -41,7 +41,7 @@
 @property (nonatomic, assign) CGFloat                    calibrationIntervalValue;
 
 /**
- 是否显示标注
+ 是否隐藏标注
  */
 @property (nonatomic, assign) BOOL                       hideAnnotation;
 
