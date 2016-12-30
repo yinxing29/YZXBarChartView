@@ -20,6 +20,7 @@
  */
 @property (nonatomic, strong) NSArray                    *contentArr;
 
+//选择性设置
 /**
  柱状图颜色
  */
@@ -31,12 +32,12 @@
 @property (nonatomic, strong) UIColor                    *coordinateColor;
 
 /**
- Y轴最大刻度
+ Y轴最大刻度(默认:100)
  */
 @property (nonatomic, assign) CGFloat                    maxScaleValue;
 
 /**
- Y轴刻度间隔值
+ Y轴刻度间隔值(默认：10)
  */
 @property (nonatomic, assign) CGFloat                    calibrationIntervalValue;
 
