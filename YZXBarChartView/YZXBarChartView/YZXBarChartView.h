@@ -45,4 +45,13 @@
  */
 @property (nonatomic, assign) BOOL                       hideAnnotation;
 
+/**
+ 注释字体大小(默认为10.0)
+ */
+@property (nonatomic, assign) CGFloat                    annotationTitleFont;
+/**
+ 坐标系内容字体大小(默认为10.0)
+ */
+@property (nonatomic, assign) CGFloat                    coordinateContentFont;
+
 @end

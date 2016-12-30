@@ -37,6 +37,12 @@
         _barChartView.calibrationIntervalValue = self.calibrationIntervalValue;
         _barChartView.hideAnnotation = self.hideAnnotation;
         _barChartView.coordinateColor = self.coordinateColor;
+        if (self.annotationTitleFont != 0) {
+            _barChartView.annotationTitleFont = self.annotationTitleFont;
+        }
+        if (self.coordinateContentFont != 0) {
+            _barChartView.coordinateContentFont = self.coordinateContentFont;
+        }
     }
     return _barChartView;
 }

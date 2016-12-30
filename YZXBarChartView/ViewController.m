@@ -60,6 +60,10 @@
  */
 @property (nonatomic, assign) BOOL                       hideAnnotation;
 
+@property (weak, nonatomic) IBOutlet UITextField *coordinateContentFont;
+@property (weak, nonatomic) IBOutlet UITextField *annotationTitleFont;
+
+
 @end
 
 @implementation ViewController
@@ -141,6 +145,9 @@
     showVC.calibrationIntervalValue = self.calibrationIntervalValue;
     showVC.hideAnnotation = self.hideAnnotation;
     showVC.coordinateColor = self.coordinateColor;
+    showVC.annotationTitleFont = [self.annotationTitleFont.text floatValue];
+    //设置之后坐标系内容字体大小不会根据内容多少而变化
+//    showVC.coordinateContentFont = [self.coordinateContentFont.text floatValue];
     [self.navigationController pushViewController:showVC animated:YES];
 }
 

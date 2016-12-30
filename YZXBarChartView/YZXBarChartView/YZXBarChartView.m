@@ -22,6 +22,12 @@
 #define Y_X origin_x
 //#define Y_Y 30.0
 
+@interface YZXBarChartView ()
+
+@property (nonatomic, assign) BOOL                    fontFlag;
+
+@end
+
 @implementation YZXBarChartView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -33,6 +39,10 @@
 
         self.maxScaleValue = 100.0;
         self.calibrationIntervalValue = 10.0;
+        
+        self.annotationTitleFont = 10.0;
+        self.coordinateContentFont = 10.0;
+        self.fontFlag = NO;
     }
     return self;
 }
@@ -65,7 +75,7 @@ static CGFloat Y_Y = 30.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //设置title字体大小
-    UIFont *font = [UIFont systemFontOfSize:10.0];
+    UIFont *font = [UIFont systemFontOfSize:self.annotationTitleFont];
     __block NSDictionary *arrts = @{NSFontAttributeName:font};
     __block CGRect annotationRect = CGRectZero;
     __block CGRect annotationTitleRect = CGRectZero;
@@ -181,15 +191,17 @@ static CGFloat Y_Y = 30.0;
     //画柱状图(scale_x:X轴相邻两刻度之间的距离)
     //计算柱状图的宽度
     __block CGFloat barWidth = scale_x - scale_x / 3.0;
+    __block UIFont *contentFont = [UIFont systemFontOfSize:self.coordinateContentFont];
+    __block NSDictionary *contentArrts = @{NSFontAttributeName:contentFont};
     if (barWidth >= X_MAX / 2.0) {
         barWidth = X_MAX - 10.0;
     }
     
     //当柱形图宽度很小时，调整文本大小
-    if (barWidth < annotationHeight) {
+    if (barWidth < annotationHeight && !self.fontFlag) {
         //文本的font之间相差2.0时，text的高度相差2.4
-        font = [UIFont systemFontOfSize:(10.0 - (int)(barWidth / 2.0))];
-        arrts = @{NSFontAttributeName:font};
+        contentFont = [UIFont systemFontOfSize:(self.coordinateContentFont - (int)(barWidth / 2.4))];
+        contentArrts = @{NSFontAttributeName:contentFont};
     }
     
     [self.contentArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -201,15 +213,15 @@ static CGFloat Y_Y = 30.0;
         CGContextDrawPath(context, kCGPathFill);
         
         //根据font计算一行文本的高度
-        CGFloat onelineHeight = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size.height;
+        CGFloat onelineHeight = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:contentArrts context:nil].size.height;
         
-        CGSize titleSize = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.height - (origin_y), onelineHeight * 2) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
+        CGSize titleSize = [self.titleArr[idx] boundingRectWithSize:CGSizeMake(self.bounds.size.height - (origin_y), onelineHeight * 2) options:NSStringDrawingUsesLineFragmentOrigin attributes:contentArrts context:nil].size;
         
         //添加X轴刻度说明                                                                              (scale_x / 3.0 * 2.0) / 2.0
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(scale_x * (idx + 1) + origin_x - barWidth / 2.0, origin_y + 10.0, self.bounds.size.height - (origin_y), titleSize.height)];
         label.text = self.titleArr[idx];
         label.textColor = self.coordinateColor;
-        label.font = font;
+        label.font = contentFont;
         label.transform = CGAffineTransformMakeRotation(M_PI_4);
         [self addSubview:label];
         
@@ -218,9 +230,9 @@ static CGFloat Y_Y = 30.0;
         if ([obj floatValue] >= 10000.0) {
             scaleValue = [NSString stringWithFormat:@"%.2f万",[obj floatValue] / 10000.0];
         }
-        CGSize scaleValueSize = [scaleValue boundingRectWithSize:CGSizeMake(weak_self.bounds.size.width, weak_self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:arrts context:nil].size;
+        CGSize scaleValueSize = [scaleValue boundingRectWithSize:CGSizeMake(weak_self.bounds.size.width, weak_self.bounds.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:contentArrts context:nil].size;
         //画内容
-        [scaleValue drawInRect:CGRectMake(content_x - scaleValueSize.width / 2.0, content_y - 0.5 - scaleValueSize.height - 2.0, scaleValueSize.width, scaleValueSize.height) withAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:self.coordinateColor}];
+        [scaleValue drawInRect:CGRectMake(content_x - scaleValueSize.width / 2.0, content_y - 0.5 - scaleValueSize.height - 2.0, scaleValueSize.width, scaleValueSize.height) withAttributes:@{NSFontAttributeName:contentFont,NSForegroundColorAttributeName:self.coordinateColor}];
     }];
     
     //裁剪超出视图部分
@@ -284,6 +296,21 @@ static CGFloat Y_Y = 30.0;
     if (_hideAnnotation != hideAnnotation) {
         _hideAnnotation = hideAnnotation;
     }
+}
+
+- (void)setAnnotationTitleFont:(CGFloat)annotationTitleFont
+{
+    if (_annotationTitleFont != annotationTitleFont) {
+        _annotationTitleFont = annotationTitleFont;
+    }
+}
+
+- (void)setCoordinateContentFont:(CGFloat)coordinateContentFont
+{
+    if (_coordinateContentFont != coordinateContentFont) {
+        _coordinateContentFont = coordinateContentFont;
+    }
+    self.fontFlag = YES;
 }
 
 @end
